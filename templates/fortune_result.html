@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG 태그 -->
+    <meta property="og:title" content="선물별 성격유형 테스트"/>
+    <meta property="og:description" content="15일 메이킹챌린지 6기 - 1조 뿕은악마"/>
+    <meta property="og:image" content="{{ url_for('static', filename='images/gift-og.png') }}"/>
+
+    <!--CSS -->
+    <link rel="stylesheet" href="../static/style/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- include HTML 여러 개의 html을 병합해주는 스크립트-->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+    <title>선물별 성격유형 테스트</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="wrap" style="padding: 50px 20px;">
+            <div class="intro-img">
+                <img src="../static/images/fortune-conc.png">
+            </div>
+            <br>
+            <div style="border:10px; border-radius: 10px; padding: 20px 20px; background-color:#D5B896">
+                코딩은 배워도 배워도 끝이 없는 것. 계속되는 오류 속에서 나에게 남는 것은 오기 뿐이다. 스파르타 코딩클럽 메이킹 챌린지 참여를 후회하고 싶어지는 지금. 나는 어떻게 이 위기를 극복할 것인가. 두둥둥</div>
+            <br>
+            <button class="main-btn red-font" style="background-color: white; display: inline-block;">다시하기</button>
+            <button class="main-btn red-font" style="background-color: white; display: inline-block;">저장하기</button>
+        </div>
+
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+</body>
+</html>

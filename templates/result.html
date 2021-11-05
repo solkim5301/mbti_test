@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG 태그 -->
+    <meta property="og:title" content="선물별 성격유형 테스트"/>
+    <meta property="og:description" content="15일 메이킹챌린지 6기 - 1조 뿕은악마"/>
+    <meta property="og:image" content="{{ url_for('static', filename='images/gift-og.png') }}"/>
+
+    <!--CSS -->
+    <link rel="stylesheet" href="../static/style/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- include HTML 여러 개의 html을 병합해주는 스크립트-->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                            }
+                            if (this.status == 404) {
+                                elmnt.innerHTML = "Page not found.";
+                            }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+
+    <title>선물별 성격유형 테스트</title>
+
+</head>
+<body>
+<!-- 오디오 오르골 -->
+<!--    <p>테스트 삼아 음원 넣었습니다.</p>-->
+<!--    <audio controls autoplay>-->
+<!--        <source src="../static/music/over-the-rainbow.mp4" type="audio/mp4">-->
+<!--    </audio>-->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6">
+            <div class="wrap">
+                <div class="intro-img">
+                    <img src="../static/images/gift-conc.png">
+                </div>
+                <h1 class="intro-title">
+                    당신의 선물유형은
+                    <br>
+                    "이건 나만 갖고 싶어!"
+                </h1>
+<!--                <i></i>-->
+                <div style="margin: 40px 0 60px">
+                    아이콘
+                </div>
+                <div>
+                    <div style="display:inline-block; height:130px; width:130px; border-radius:50%; background-color:#D5B896; margin: 0 5px 40px 0;">
+                    </div>
+                    <div style="display:inline-block; height:130px; width:130px; border-radius:50%; background-color:#D5B896; margin: 0 5px 40px 0;">
+                    </div>
+                    <div style="display:inline-block; height:130px; width:130px; border-radius:50%; background-color:#D5B896; margin: 0 5px 40px 0;">
+                    </div>
+                </div>
+                <div class="main-text">
+                    <h5>
+                        천하를 예가 남는 영락과 이상의 그들은 이상은 무엇이 가는 말이다. 든 심장은 열락의 무한한 노년에게서 이상은 무엇을 피가 주는 이것이다.
+                        고행을 거친 할지라도 트고, 무엇이 이것이다. 가진 얼마나 밥을 힘있다. 능히 이것을 용기가 굳세게 가치를 이상이 것이다.
+                        간에 작고 불러 오직 이상이 붙잡아 현저하게 인간의 굳세게 아니다.
+                    </h5>
+                </div>
+                <div>
+                    <button class="main-btn red-font" style="display:inline">다시 하기</button>
+                    <button class="main-btn red-font" style="display:inline">공유하기</button>
+                </div>
+                <a href="#">
+                <div style="text-align:center; height:140px; width:140px; border-radius:50%; background-color:#F5E9DA;">
+                    <img src="../static/images/fortune-main.png" style="display:block; height:100px; margin:0 auto;">
+                    <span class="main-text">포춘쿠키 뽑기</span></button>
+                </div>
+                </a>
+            </div>
+        </div>
+          <div class="col-sm-3">
+        </div>
+      </div>
+    </div>
+    <footer include-html="footer.html"></footer>
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>

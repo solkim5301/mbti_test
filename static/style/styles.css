@@ -1,0 +1,66 @@
+body {
+    background-color: #E6D2BA !important;
+}
+
+.wrap {
+    text-align: center;
+    padding: 200px 20px;
+
+}
+
+
+/*폰트 스타일*/
+* {
+    font-family: 'Jua', sans-serif;
+
+}
+
+
+.intro-title {
+    color: #E75453;
+    margin-bottom: 10px;
+
+}
+
+.main-text {
+    color: #2B0000;
+
+}
+
+
+/*컨테이너 스타일*/
+
+.intro-img {
+    margin: 20px auto;
+}
+
+footer {
+    background-color: #E75453;
+
+}
+
+
+/*이미지 스타일*/
+
+.intro-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*버튼 스타일*/
+.main-btn {
+    width: 230px;
+    height: 60px;
+    margin: 30px auto;
+    padding: 10px;
+    display: block;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #E75453;
+}
+
+.red-font {
+    color: #E75453;
+    font-size: 20px;
+}
